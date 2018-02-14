@@ -38,7 +38,10 @@ public class Main {
         try {
             commandSuffix = command.split(":")[1];
             commandSuffix = commandSuffix.substring(1, commandSuffix.length());
-        } catch (ArrayIndexOutOfBoundsException | NullPointerException e) {
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.print("Invalid command");
+            return true;
+        } catch (NumberFormatException e1) {
             System.out.print("Invalid command");
             return true;
         }
